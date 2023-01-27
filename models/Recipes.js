@@ -15,8 +15,9 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        //datatype=array or string? because user will be writing paragraph 
         ingredients: {
-            type: DataTypes.ARRAY,
+            type: DataTypes.STRING,
             allowNull: false,
         },
     },
