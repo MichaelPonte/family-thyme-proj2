@@ -19,6 +19,11 @@ User.init(
         username: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
+            validate: {
+                notNull: {
+                  msg: 'Please enter username'
+                }
         },
         password: {
             type: DataTypes.STRING,
@@ -27,6 +32,7 @@ User.init(
                 len: [4]
             },
         },
+    }
 },
 
 {
@@ -45,3 +51,13 @@ User.init(
 );
 
 module.exports = User;
+
+//DO WE NEED TO ADD THE FOLLOWING SO NO OTHER USERS CAN LOG IN?
+
+// validate: {
+    // customValidator(value) {
+    //     if (value === null && this.age !== 10) {
+    //       throw new Error("name can't be null unless age is 10");
+    //     }
+    //   }
+    // }

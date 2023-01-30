@@ -16,10 +16,18 @@ Recipe.init(
             allowNull: false,
         },
         //datatype=array or string? because user will be writing paragraph 
-        ingredients: {
+        directions: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                max: 400
+            }          
         },
+        //chosen language set to english
+        isIn: {
+            args: [['en']],
+            msg: "Directions must be English"
+          }
     },
     {
         sequelize,
