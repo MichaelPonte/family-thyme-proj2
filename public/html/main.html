@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Family Thyme</title>
+    <link rel="stylesheet" type="text/css" href="public\stylesheets\style.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#recipes">My Recipes</a></li>
+          <li><a href="#ingredients">My Ingredients</a></li>
+          <li><a href="#feeling-lucky">I'm Feeling Lucky</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+
+    <main>
+        <section id="generate-recipes">
+            <h2>Generate Recipes</h2>
+            <form>
+              <label for="ingredients">Enter ingredients separated by commas:</label>
+              <input type="text" id="ingredients" name="ingredients">
+              <br>
+              <input type="submit" value="Generate">
+            </form>
+          </section>
+          
+          <section id="input-recipes">
+            <h2>Input Your Recipes</h2>
+            <form>
+              <label for="recipe-name">Recipe Name:</label>
+              <input type="text" id="recipe-name" name="recipe-name">
+              <br>
+              <label for="ingredients">Ingredients:</label>
+              <input type="text" id="ingredients" name="ingredients">
+              <br>
+              <label for="directions">Directions:</label>
+              <textarea id="directions" name="directions"></textarea>
+              <br>
+              <input type="submit" value="Submit">
+            </form>
+          </section>
+          
+          <section id="random-recipe">
+            <h2>Random Recipe</h2>
+            <button id="generate-random">Generate Random Recipe</button>
+          </section>
+    </main>
+
+    <footer>
+      Family Thyme 2023
+    </footer>
+  </body>
+</html>

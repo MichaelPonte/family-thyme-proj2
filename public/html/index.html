@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Family Thyme Login</title>
+        <link rel="stylesheet" type="text/css" href="public/stylesheets/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="content-container">
+          <h1>Family Thyme</h1>
+          <img src='assets\thymepic.png' alt='thyme-leaf'/>
+          <div id="login-container"></div>
+        </div>
+        <script id="login-template" type="text/x-handlebars-template">
+          <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <br><br>
+            <input type="submit" value="Login">
+          </form>
+        </script>
+        <script src="main.js"></script>
+      </body>
+      
+</html>
+
+
