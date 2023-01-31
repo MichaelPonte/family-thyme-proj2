@@ -30,6 +30,18 @@ h1 {
   font-family: 'Pacifico', cursive;
 }
 
+.recipe-header {
+  color: greenyellow;
+  background-color: black;
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 5em;
+  margin-bottom: 30%;
+  height: 45px;
+  font-family: 'Pacifico', cursive;
+}
+
 form {
   color: white;
   display: flex;
@@ -71,4 +83,11 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.directions {
+  background-color: #4CAF50;
+  color: black;
+  padding: 0.5em 1em;
+  line-height: 10px;
 }

@@ -3,6 +3,7 @@ const sequelize = require("../config/connection");
 
 class Recipe extends Model {}
 
+
 Recipe.init(
     {
         id: {
@@ -15,9 +16,13 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-
-        directions: {
+        category: {
             type: DataTypes.STRING,
+            allowNull: false,
+        },
+        //the users can write directions without restriction
+        directions: {
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 max: 400

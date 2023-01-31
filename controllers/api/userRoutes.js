@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
     })
     //to handle the error
     .catch((err) => {
-      res.json(err);
+      res.status(400).json(err);
     });
 });
 
@@ -56,7 +56,7 @@ router.post('/controllers', (req, res) => {
     })
     //the catch error will catch all errors instead of having to put it every time 
     .catch((err) => {
-      res.json(err);
+      res.status(400).json(err);
     });
 });
 
