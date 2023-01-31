@@ -4,7 +4,7 @@ router.get('/', async (req, res) => {
     // rendering the page or send error
 
     try {
-        res.render('login.hbs');
+        res.render('login');
     
     } catch (err) {
         console.log(err); 
