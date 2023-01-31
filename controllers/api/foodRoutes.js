@@ -7,8 +7,7 @@ const Recipe = require('../../models/Recipe');
 // CREATE a recipe
 router.post('/', (req, res) => {
 
-  //use the model, call the create function & pass what needs to be passed 
-  //for multiples you can use the bulkCreate function 
+  //use the model, call the create function & pass params
   Recipe.create({
     //getting user input
     title: req.body.title,
@@ -28,7 +27,6 @@ router.post('/', (req, res) => {
 });
 
 // CREATE multiple entries
-router.post('/controllers', (req, res) => {
   // Multiple rows can be created with `bulkCreate()` and an array
   // This could also be moved to a separate Node.js script to ensure it only happens once
   Recipe.bulkCreate([
@@ -66,6 +64,9 @@ router.post('/controllers', (req, res) => {
     }
     
   ])
+
+  router.post('/controllers', (req, res) => {
+
     .then(() => {
       res.send('Family recipe database seeded!');
     })
