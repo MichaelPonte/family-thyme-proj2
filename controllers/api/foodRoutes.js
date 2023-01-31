@@ -1,12 +1,14 @@
 const router = require('express').Router();
 
 // Import the model
-const Recipe = require('../../models/Recipes');
+const Recipe = require('../../models/Recipe');
+
+
+router.get()
+
 
 // CREATE a recipe
 router.post('/', (req, res) => {
-  // Use Sequelize's `create()` method to add a row to the table
-  // `INSERT INTO` in plain SQL
 
   //use the model, call the create function & pass what needs to be passed 
   //for multiples you can use the bulkCreate function 
