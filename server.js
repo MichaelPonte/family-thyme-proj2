@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');//add path here to fs when needed
 
 const routes = require('./controllers');
-// const helpers = require('./utils/auth'); //add path here to helpers when needed
+//add path here to helpers when needed
 const sequelize = require('./config/connections');
 //add path here to database when needed
 
@@ -41,6 +41,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
   });
