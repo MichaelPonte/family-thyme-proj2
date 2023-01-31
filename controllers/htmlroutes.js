@@ -1,5 +1,20 @@
+const router = require('express').Router();
+
 router.get('/', async (req, res) => {
-    // Here, index.html is rendered
-    res.sendFile(path.join(__dirname, '../views/index.html'));
-  });
-  
+    // rendering the page or send error
+
+    try {
+        res.render('login.hbs');
+    
+    } catch (err) {
+        console.log(err); 
+        res.status(500).json(err);
+    }
+
+});
+
+
+
+
+
+module.exports = router; 

@@ -4,9 +4,6 @@ const router = require('express').Router();
 const Recipe = require('../../models/Recipe');
 
 
-router.get()
-
-
 // CREATE a recipe
 router.post('/', (req, res) => {
 
