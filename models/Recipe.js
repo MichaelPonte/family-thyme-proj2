@@ -15,10 +15,19 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        ingredients: {
-            type: DataTypes.ARRAY,
+
+        directions: {
+            type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                max: 400
+            }          
         },
+        //chosen language set to english
+        isIn: {
+            args: [['en']],
+            msg: "Directions must be English"
+          }
     },
     {
         sequelize,

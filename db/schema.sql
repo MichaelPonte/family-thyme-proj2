@@ -1,3 +1,10 @@
-DROP DATABASE IF EXISTS test;
+DROP DATABASE IF EXISTS recipesDB;
 
-CREATE DATABASE test;
+
+CREATE DATABASE recipesDB;
+USE recipesDB;
+
+
+-- should be more specified tables 
+-- recipes tables, categories, ingredients, directions, measurements, 
+-- with properties like 
