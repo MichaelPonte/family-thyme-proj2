@@ -14,7 +14,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);//Ini
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-const handlebars = ExpHandlebars.create({ helpers});
+const handlebars = ExpHandlebars.create({});
 
 //Setting up connection to Sequelize database
 const sess = {
