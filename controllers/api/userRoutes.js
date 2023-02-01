@@ -3,24 +3,23 @@ const router = require('express').Router();
 // Import the model
 const User = require('../../models/User');
 
-// CREATE a recipe
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-        userName: req.body.userName,
+        username: req.body.username,
       },
     });
 
     if (!dbUserData) {
-      res.status(400).json({ message: 'Incorrect username or password' });
+      res.status(400).json({ message: 'Incorrect username' });
       return;
     }
 
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect username or password' });
+      res.status(400).json({ message: 'Incorrect password' });
       return;
     }
 
