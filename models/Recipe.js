@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const sequelize = require("../config/connections");
 
 class Recipe extends Model {}
 
@@ -15,7 +15,6 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-
         directions: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -23,11 +22,14 @@ Recipe.init(
                 max: 400
             }          
         },
-        //chosen language set to english
-        isIn: {
-            args: [['en']],
-            msg: "Directions must be English"
-          }
+        category: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        prep_time: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
     },
     {
         sequelize,

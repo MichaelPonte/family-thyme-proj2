@@ -28,45 +28,13 @@ router.post('/', async (req, res) => {
       req.session.loggedIn = true;
       res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
     });
+
+    res.redirect('/homepage');
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
   }
 });
-
-// // CREATE multiple entries
-// router.post('/controllers', (req, res) => {
-//   // Multiple rows can be created with `bulkCreate()` and an array
-//   // This could also be moved to a separate Node.js script to ensure it only happens once
-//   User.bulkCreate([
-
-//     //array of an object so we can pass multiple entries in the table (this is the same as 'insert into' from SQL)
-//     {
-//       //static data 
-//       //generating som edata before starting application
-//       userName: 'jag',
-//       password: '1209'
-
-//     },
-//     {
-//         userName: 'MPonte',
-//         password: '1337'
-  
-//     },
-//     {
-//         userName: 'sarafN',
-//         password: '6666'
-  
-//     }    
-//   ])
-//     .then(() => {
-//       res.send('Family recipe database seeded!');
-//     })
-//     //the catch error will catch all errors instead of having to put it every time 
-//     .catch((err) => {
-//       res.json(err);
-//     });
-// });
 
 module.exports = router;
 
