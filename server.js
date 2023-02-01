@@ -2,7 +2,6 @@ const express = require('express');
 const ExpHandlebars = require('express-handlebars');
 const session = require('express-session');
 const path = require('path');
-const fs = require('fs');//add path here to fs when needed
 
 const routes = require('./controllers');
 //add path here to helpers when needed
@@ -19,12 +18,7 @@ const handlebars = ExpHandlebars.create({});
 //Setting up connection to Sequelize database
 const sess = {
     secret: 'Super secret secret',
-    cookie: {
-        httpOnly: true,
-        secure: false,
-        sameSite: 'strict',
-        //Can add "maxAge" for cookie expiration
-    },
+    cookie: {},
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
