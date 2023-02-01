@@ -3,7 +3,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => { //Rendering the login page
     try {
-        if (req.session.loggedIn) {
+        if (!req.session?.loggedIn) {
         res.render('login');
         } else {
             res.redirect('/homepage');

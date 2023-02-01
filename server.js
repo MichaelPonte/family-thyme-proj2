@@ -4,9 +4,7 @@ const session = require('express-session');
 const path = require('path');
 
 const routes = require('./controllers');
-//add path here to helpers when needed
 const sequelize = require('./config/connections');
-//add path here to database when needed
 
 const PORT = process.env.PORT || 3001;
 const app = express();
