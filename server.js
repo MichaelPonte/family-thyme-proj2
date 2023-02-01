@@ -9,10 +9,10 @@ const routes = require('./controllers');
 const sequelize = require('./config/connections');
 //add path here to database when needed
 
-const SequelizeStore = require('connect-session-sequelize')(session.Store);//Initializing Sequelize with session store
-
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+const SequelizeStore = require('connect-session-sequelize')(session.Store);//Initializing Sequelize with session store
 
 const handlebars = ExpHandlebars.create({});
 
