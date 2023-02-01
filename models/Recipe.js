@@ -1,3 +1,5 @@
+//table definitions, seeds is optional if we want to create a full table 
+
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 

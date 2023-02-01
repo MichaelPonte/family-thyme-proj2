@@ -1,3 +1,5 @@
+//this file will create a table and define the columns 
+
 const { Model, DataTypes } = require('sequelize');
 const bycrpt = require('bycrypt');
 const sequelize = require('../config/connections'); 
@@ -32,6 +34,10 @@ User.init(
                 len: [4]
             },
         },
+        // admin: {
+        //     type: DataTypes.BOOLEAN,
+            // user model needs a unique account number to link / join together 
+        // }
     }
 },
 
