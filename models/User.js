@@ -19,6 +19,11 @@ User.init(
         username: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
+            validate: {
+                notNull: {
+                  msg: 'Please enter username'
+                }
         },
         password: {
             type: DataTypes.STRING,
@@ -27,6 +32,7 @@ User.init(
                 len: [4]
             },
         },
+    }
 },
 
 {
@@ -45,3 +51,4 @@ User.init(
 );
 
 module.exports = User;
+
