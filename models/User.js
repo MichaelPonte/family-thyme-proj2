@@ -1,12 +1,11 @@
-//this file will create a table and define the columns 
 
 const { Model, DataTypes } = require('sequelize');
-const bycrpt = require('bycrypt');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connections'); 
 
 class User extends Model {
     checkPassword(loginPassword) {
-        return bycrpt.compareSync(loginPassword, this.password);
+        return bcrypt.compareSync(loginPassword, this.password);
     }
 }
 
@@ -26,7 +25,9 @@ User.init(
                 notNull: {
                   msg: 'Please enter username'
                 }
+            }
         },
+        
         password: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -34,17 +35,13 @@ User.init(
                 len: [4]
             },
         },
-        // admin: {
-        //     type: DataTypes.BOOLEAN,
-            // user model needs a unique account number to link / join together 
-        // }
-    }
-},
+    },
+
 
 {
     hooks: {
         async beforeCreate(newUserData) {
-            newUserData.password = await bycrpt.hash(newUserData.password, 10);
+            newUserData.password = await bcrypt.hash(newUserData.password, 10);
             return newUserData;
         },
     },
@@ -57,4 +54,3 @@ User.init(
 );
 
 module.exports = User;
-

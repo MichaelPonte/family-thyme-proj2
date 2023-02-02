@@ -1,5 +1,6 @@
 # Family Thyme 
 
+[![NPM Download Stats](https://nodei.co/npm/package.png?downloads=true)](https://www.npmjs.com/package)
 
 ## Description
 Do you have family recipes that have been passed on from older generations? Are the recipes nowhere to be found, illegible or destroyed? Family Thyme makes sure that doesn't happen by  
@@ -31,40 +32,34 @@ Installation requirements:
 
 ## Usage
 
-User must run ```node server.js``` to start the app. The login page will allow the user to enter their credentials to access the application. 
+User must run ```node server.js``` to start the app. The login page will allow the user to enter credentials to access the application. 
 
 Once the user goes through the appropriate prompts an HTML file is generated containing all the information user inputted. 
 
 
 ## Badges
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
 ## License
 
+![](https://img.shields.io/badge/License-MIT-yellowgreen)
+
 
 ## Contributors
-* To contribute clone this repo locally and commit your code on a separate branch!
-* Please follow standard guidelines at: [Contributor Covenant](https://www.contributor-covenant.org/) 
 
-## Tests
-
+https://github.com/MichaelPonte
+https://github.com/Sophack
+https://github.com/jagjhandi
 
 ## Technology Used
 - HTML
 - CSS
 - JavaScript
 - Node.js
-- Inquirer
-- Path
-- Jest
+- 
 - Prettier (plugin for code formatting) 
 
 ## Demonstration
-In order to view the functionality please watch the video [here](https://github.com/Sophack/TeamProfileGenerator/blob/main/TeamProfileGen%20Video.mp4)
+In order to view the functionality please follow the Heroku link: 
 
-## Questions
-
-My Github username is sophack, which can be accessed here https://github.com/sophack/TeamProfileGenerator.
-
-Follow me for more projects!
-  
