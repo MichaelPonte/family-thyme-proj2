@@ -1,3 +1,4 @@
+//this data will be displayed in the application before users manually add 
 const { Recipe } = require('../models')
 
 const recipeData = [

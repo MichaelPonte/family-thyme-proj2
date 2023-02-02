@@ -1,9 +1,10 @@
+
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => { //Rendering the login page
     try {
-        if (req.session.loggedIn) {
+        if (!req.session?.loggedIn) {
         res.render('login');
         } else {
             res.redirect('/homepage');
@@ -24,7 +25,18 @@ router.get('/homepage', withAuth, async (req, res) => { //Rendering homepage
         res.status(500).json(err);
     }
 });
+router.get('/', async (req, res) => {
+    // rendering the page or send error
 
+    try {
+        res.render('login');
+    
+    } catch (err) {
+        console.log(err); 
+        res.status(500).json(err);
+    }
+
+});
 
 
 module.exports = router; 

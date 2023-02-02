@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Square+Peg&family=Updock&display=swap');
+
 #content-container {
   display: flex;
   align-items: center;
@@ -21,6 +23,18 @@ a {
 
 h1 {
   color: greenyellow;
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 5em;
+  margin-bottom: 30%;
+  height: 45px;
+  font-family: 'Square peg', cursive;
+}
+
+.recipe-header {
+  color: greenyellow;
+  background-color: black;
   font-size: 3em;
   text-align: center;
   margin-bottom: 1em;
@@ -71,4 +85,11 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.directions {
+  background-color: #4CAF50;
+  color: black;
+  padding: 0.5em 1em;
+  line-height: 10px;
 }

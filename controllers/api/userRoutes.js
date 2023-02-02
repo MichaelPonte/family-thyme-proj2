@@ -1,33 +1,42 @@
 const router = require('express').Router();
+const { User } = require('../../models');
+const bcrypt = require('bcrypt');
 
-// Import the model
-const User = require('../../models/User');
 
-// CREATE a recipe
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    const dbUserData = User.findOne({
       where: {
         userName: req.body.userName,
       },
     });
 
     if (!dbUserData) {
-      res.status(400).json({ message: 'Incorrect username or password' });
+      console.log(User.findAll());
+      console.log(dbUserData);
+      console.log(req.body.username);
+      res.status(400).json({ message: 'Incorrect username' });
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = bcrypt.compareSync(req.body.password, dbUserData.password);
+
+
+
+
+    //const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect username or password' });
+      res.status(400).json({ message: 'Incorrect password' });
       return;
     }
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
+      res.status(200).json({ user: dbUserData, message: 'You are now logged in, feel free to edit recipes!' });
     });
+
+    res.redirect('/homepage');
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
