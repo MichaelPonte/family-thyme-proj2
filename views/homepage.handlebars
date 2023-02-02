@@ -1,16 +1,10 @@
-
-
-<div class="#content-container">
-  <div class="recipe-header">
-    {{recipe_title}}
-  </div>
-  <div class="form">
-    <p>
-      {{category}}
-    </p>
-
-      <p class="directions">
-        {{directions}}
-      </p>
-  </div>
-</div>
+<h1>Recent Recipes</h1>
+<ul>
+  {{#each recipes}}
+    <li>
+      <h2>{{title}}</h2>
+      <p>Category: {{category}}</p>
+      <p>Directions: {{directions}}</p>
+    </li>
+  {{/each}}
+</ul>
