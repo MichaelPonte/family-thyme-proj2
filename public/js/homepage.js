@@ -12,4 +12,5 @@ module.exports = {
   addRecipe
 };
 
+// Takes in user input and adds the recipe data to the recipe array
   
