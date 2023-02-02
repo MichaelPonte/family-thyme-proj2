@@ -1,11 +1,9 @@
 const router = require('express').Router();
-const userRoutes = require('./userRoutes');
-const foodRoutes = require('./foodRoutes');
 
+const userRoute = require('./userRoutes');
+const foodRoute = require('./foodRoutes');
 
-//use a more unique name to differentiate 
-
-router.use('/users', userRoutes);
-router.use('/', foodRoutes);
+router.use('/users', userRoute);
+router.use('/recipes', foodRoute);
 
 module.exports = router;

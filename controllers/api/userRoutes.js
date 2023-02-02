@@ -1,27 +1,33 @@
 const router = require('express').Router();
+const { User } = require('../../models');
+const bcrypt = require('bcrypt');
 
-// Import the model
-const User = require('../../models/User');
 
-
-//login route for users & validation
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    const dbUserData = User.findOne({
       where: {
-        username: req.body.userName,
+        userName: req.body.userName,
       },
     });
 
     if (!dbUserData) {
-      res.status(400).json({ message: 'Incorrect username or password' });
+      console.log(User.findAll());
+      console.log(dbUserData);
+      console.log(req.body.username);
+      res.status(400).json({ message: 'Incorrect username' });
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = bcrypt.compareSync(req.body.password, dbUserData.password);
+
+
+
+
+    //const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect username or password' });
+      res.status(400).json({ message: 'Incorrect password' });
       return;
     }
 
@@ -29,13 +35,15 @@ router.post('/', async (req, res) => {
       req.session.loggedIn = true;
       res.status(200).json({ user: dbUserData, message: 'You are now logged in, feel free to edit recipes!' });
     });
+
+    res.redirect('/homepage');
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
   }
 });
 
-//
+// // CREATE multiple entries
 // router.post('/controllers', (req, res) => {
 //   // Multiple rows can be created with `bulkCreate()` and an array
 //   // This could also be moved to a separate Node.js script to ensure it only happens once

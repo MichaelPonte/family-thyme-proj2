@@ -4,17 +4,17 @@ const userData = [
     {
         //static data 
         //generating som edata before starting application
-        userName: 'jag',
+        username: 'jag',
         password: '1209'
   
       },
       {
-          userName: 'MPonte',
+          username: 'MPonte',
           password: '1337'
     
       },
       {
-          userName: 'sarafN',
+          username: 'sarafN',
           password: '6666'
     
       } 
