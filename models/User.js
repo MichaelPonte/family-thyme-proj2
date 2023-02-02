@@ -24,7 +24,9 @@ User.init(
                 notNull: {
                   msg: 'Please enter username'
                 }
+            }
         },
+        
         password: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -32,8 +34,8 @@ User.init(
                 len: [4]
             },
         },
-    }
-},
+    },
+
 
 {
     hooks: {

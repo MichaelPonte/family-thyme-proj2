@@ -1,22 +1,30 @@
 const router = require('express').Router();
+const { User } = require('../../models');
+const bcrypt = require('bcrypt');
 
-// Import the model
-const User = require('../../models/User');
 
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    const dbUserData = User.findOne({
       where: {
         username: req.body.username,
       },
     });
 
     if (!dbUserData) {
+      console.log(User.findAll());
+      console.log(dbUserData);
+      console.log(req.body.username);
       res.status(400).json({ message: 'Incorrect username' });
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = bcrypt.compareSync(req.body.password, dbUserData.password);
+
+
+
+
+    //const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password' });
