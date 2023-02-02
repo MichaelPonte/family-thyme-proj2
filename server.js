@@ -6,8 +6,9 @@ const fs = require('fs');//add path here to fs when needed
 
 const routes = require('./controllers');
 const helpers = require('./utils/helpers'); //add path here to helpers when needed
-const sequelize = require('./config/connection');
-//add path here to database when needed
+const sequelize = require('./config/connections');
+const db = require('./db/connection');
+
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);//Initializing Sequelize with session store
 
@@ -28,7 +29,7 @@ const sess = {
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
-        db: sequelize
+    db: sequelize
     })
 }
 
