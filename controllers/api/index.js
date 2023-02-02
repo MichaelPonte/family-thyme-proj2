@@ -5,7 +5,7 @@ const foodRoutes = require('./foodRoutes');
 
 //use a more unique name to differentiate 
 
-router.use('/', userRoutes);
+router.use('/users', userRoutes);
 router.use('/', foodRoutes);
 
 module.exports = router;
