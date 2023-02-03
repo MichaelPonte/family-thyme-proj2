@@ -62,4 +62,4 @@ https://github.com/jagjhandi
 
 ## Demonstration
 In order to view the functionality please follow the Heroku link: 
-https://familyThyme.herokuapp.com
+[https://familyThyme.herokuapp.com](https://family-thyme-proj2.herokuapp.com/)
